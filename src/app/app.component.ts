@@ -6,5 +6,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'udemy-tutorial';
+  public title = 'udemy-tutorial';
+  public outerName = 'Tomek';
+  cart = ['Apples', 'Bananas', 'Cherries'];
+
+  public onNameChanged(passedValue: string) {
+    this.outerName = passedValue;
+  }
+
+  public onAddItemClicked(newItemName: string) {
+    this.cart.push(newItemName);
+    console.log('Items in parent component:');
+    console.log(this.cart);
+  }
 }
